@@ -1,0 +1,3 @@
+[submodule "htdocs/bootstrap"]
+	path = htdocs/bootstrap
+	url = https://github.com/twbs/bootstrap

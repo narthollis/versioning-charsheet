@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" ng-app="net.narthollis.Charsheet.App">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Versioned Charseet</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular-route.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  </head>
+  <body class="container-fluid">
+    <nav role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Versionable Charsheet</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="navbar-nav navbar-right">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <h2>Revisions</h2>
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div ng-view></div>
+      </div>
+    </div>
+
+    <script type="text/js" src="bootstrap/dist/js/bootstrap.js"></script>
+  </body>
+</html>
