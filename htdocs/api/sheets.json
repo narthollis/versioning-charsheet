@@ -1,13 +1,13 @@
 [
     {
-        name: "narthollis",
-        hash: "c9aa3ab53314cc019edb4c9322d58228d40042d7",
-        type: "dnd3.5",
+        "type": "dnd3.5",
+        "hash": "c9aa3ab53314cc019edb4c9322d58228d40042d7",
+        "name": "narthollis"
     },
     {
-        name: "ralline",
-        hash: "d561914392c8275b1c2c9f05a8ad89806b7b1e87",
-        type: "dnd3.5",
-    },
+        "type": "dnd3.5",
+        "hash": "d561914392c8275b1c2c9f05a8ad89806b7b1e87",
+        "name": "ralline"
+    }
 ]
 
