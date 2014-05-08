@@ -1,3 +1,6 @@
 [submodule "htdocs/bootstrap"]
 	path = htdocs/bootstrap
 	url = https://github.com/twbs/bootstrap
+[submodule "htdocs/angular-ui"]
+	path = htdocs/angular-ui
+	url = https://github.com/angular-ui/bootstrap.git
