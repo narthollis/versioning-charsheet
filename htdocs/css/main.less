@@ -96,10 +96,113 @@ body > nav {
     .row();
 }
 
+.input-group-table {
+    display: table;
+    margin-bottom: 15px;
+
+
+        list-style: none;
+        list-style-type: none;
+        padding: 0;
+
+    > div, > li {
+        &:not(.header):not(.spacer) {
+            .input-group();
+
+            > input, > output { .form-control(); };
+            > span, > strong { .input-group-addon(); }
+            > div.input-group-btn {
+                .input-group-btn();
+                min-width: 4em;
+                button {                    
+                    width: 100%;
+                }
+            }
+            > strong { font-weight: bold; }
+
+            > strong,
+             > span,
+             > input,
+             > output,
+             > label,
+             > div,
+             > button,
+             > select {
+                &:first-child {
+                    .border-right-radius(0);
+                }
+                &:last-child {
+                    .border-left-radius(0);
+                }
+                &:not(:first-child):not(:last-child) {
+                    border-radius: 0;
+                    button { border-radius: 0; }
+                }
+                &:not(:last-child) {
+                    border-right: 0;
+                    button { border-right: 0; }
+                }
+                &.blank {
+                    border-left: 0;
+                    button { border-left: 0; }
+                }
+            }
+
+            > span { padding: 6px 3px; }
+            > span.checkbox {
+                background: @input-bg;
+                padding: 6px 7px;
+                input[type="checkbox"] { margin-left: 0; }
+            }
+        }
+
+        > strong,
+         > span,
+         > input,
+         > output,
+         > label,
+         > div,
+         > button,
+         > select { display: table-cell !important; }
+
+        display: table-row !important;
+
+        > input,
+         output { min-width: 4em; }
+        
+        &.spacer {
+            height: 5px;
+            span { height: 5px; }
+        }
+    }
+}
+
 .dnd35 {
-    table.attributes, table.saves {
+    output {
+      .bg-info();
+    }
+
+    table.attributes {
         input { width: 100%; }
-        th, td { border-top: 0; }
+        th, td { border-top: 0; border-bottom: 0; }
+    }
+
+    .saves,
+     .initative,
+     .baseattackbonus,
+     .grapple,
+     .armorsummary,
+     .attackbonus,
+     .attackdamage,
+     .skilllist,
+     .synergies { 
+        .input-group-table();
+    }
+    
+    .armorsummary {
+        div {
+            input, output { min-width: 2em; }
+        }
     }
 
     .healthsummary {
@@ -108,15 +211,84 @@ body > nav {
         div { margin-bottom: 0; }
     }
 
-    .healthdetails {
-        .form-group { padding-left: 5px; padding-right: 5px; }
+    .armorbuttons {
+        button { margin-left: 1em; }
+        margin-bottom: 1.5em;
     }
 
-    .acsummary {
-        font-size: 125%;
-        margin-top: 0.7em;
-        margin-bottom: 0.2em;
+    .armoritems, .attacks {
+        h4 {
+            margin: 0;
+            font-size: 34px;
+        }
+        .panel-heading {
+            min-height: 65px;
+        }
+        .panel-body {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .form-group {
+            margin-bottom: 2px;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
     }
+
+    .armoritems {
+        .panel-body {
+            min-height: 300px;
+        }
+    }
+
+    .attacks {
+        .attackbonus {
+            .total { white-space: nowrap; }
+        }
+        .attackdamage { }
+
+        .damagetype {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            
+            .checkbox {
+                height: 20px;
+            }
+        }
+
+        .attackdamage, .attackbonus {
+            input, output { min-width: 3em; }
+            button { min-width: 1em !important; }
+        }
+    }
+
+    .gearitems {
+        .make-lg-column(12);
+        .make-md-column(12);
+        .make-sm-column(12);
+        .make-xs-column(12);
+
+        ul {
+            .input-group-table();
+
+            .page, .quantity, .weight {
+                width: 10%;
+            }
+
+            .name {
+                width: 60%;
+
+                button { width: 100%; }
+            }
+
+            .quantity, .weight {
+                text-align: right;
+            }
+        }
+    }
+
+    .skilllist {
+    }
+
 
 }
-
