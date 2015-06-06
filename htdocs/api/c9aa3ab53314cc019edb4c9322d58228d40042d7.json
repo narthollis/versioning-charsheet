@@ -1,0 +1,579 @@
+{
+    "char_name": "Rillith / Arlen Ricath",
+    "player_name": "Nich",
+    "class_level": "Sorcorer (8)",
+    "race": "Human",
+    "alignment": "CN",
+    "deity": "-",
+    "size": 0,
+    "age": 21,
+    "gender": "Male",
+    "height": "6' 4\"",
+    "weight": "210lb",
+    "eyes": "Brown",
+    "hair": "Brown",
+    "skin": "White",
+
+    "str": 8,
+    "str_adj": 0,
+    "dex": 12,
+    "dex_adj": 0,
+    "con": 14,
+    "con_adj": -2,
+    "int": 12,
+    "int_adj": 0,
+    "wis": 11,
+    "wis_adj": 0,
+    "cha": 18,
+    "cha_adj": 2,
+
+    "health": 47,
+    "damage": 0,
+    "nonlethal": 0,
+
+    "speed": 30,
+
+    "natural_armor": 1,
+    "deflection_mod": 0,
+    "armor_misc": 0,
+    "armor_flat_misc": 0,
+    "armor_touch_misc": 0,
+
+    "damage_reduction": 0,
+    "spell_resistance": 0,
+
+    "initiative_mod": 0,
+
+    "save_fortitude_base": 3,
+    "save_fortitude_magic": 0,
+    "save_fortitude_misc": 0,
+    "save_fortitude_temp": 0,
+
+    "save_reflex_base": 3,
+    "save_reflex_magic": 0,
+    "save_reflex_misc": 0,
+    "save_reflex_temp": 0,
+
+    "save_will_base": 7,
+    "save_will_magic": 0,
+    "save_will_misc": 0,
+    "save_will_temp": 0,
+
+    "base_attack_bonus": 5,
+
+    "grapple_misc": 0,
+
+    "armor": [
+        {
+            "equiped": true,
+            "name": "Chain Shorts",
+            "type": "Light",
+            "bonus": 4,
+            "max_dex_bonus": 4,
+            "check_penalty": -2,
+            "spell_failure": 20,
+            "speed": 30,
+            "weight": 25,
+            "special": ""
+        },
+        {
+            "equiped": false,
+            "name": "Full Pants",
+            "type": "Heavy",
+            "bonus": 8,
+            "max_dex_bonus": 1,
+            "check_penalty": -6,
+            "spell_failure": 35,
+            "speed": 20,
+            "weight": 50,
+            "special": ""
+        }
+    ],
+    "shield": [
+        {
+            "equiped": true,
+            "name": "Heavy Steel",
+            "bonus": 2,
+            "check_penalty": -2,
+            "spell_failure": 15,
+            "weight": 15,
+            "special": ""
+        }
+    ],
+    "protective_item": [
+        {
+            "equiped": true,                
+            "name": "Necklet of Armor +4",
+            "equiped": true,
+            "type": "natural",
+            "bonus": 4,
+            "weight": 1,
+            "special": ""
+        },
+        {
+            "equiped": true,                
+            "name": "Arrow Bee Gone!",
+            "equiped": true,
+            "type": "deflection",
+            "bonus": 4,
+            "weight": 1,
+            "special": "Large Bee that Fends off arrows"
+        }
+    ],
+    "attack": [
+        {
+            "name": "Bite",
+            "is_item": 0,
+            "bonus": 1,
+            "damage": "1d8",
+            "damage_bonus": 0,
+            "critical": "20x3",
+            "range": 0,
+            "slashing": true,
+            "piercing": true,
+            "bludgeoning": true,
+            "notes": "",
+            "ammunition": 0,
+            "damage_attribute": "Str",
+            "attack_attribute": "Str",
+            "page": 124,
+            "weight": 0
+        },
+        {
+            "name": "Longsword",
+            "is_item": 1,
+            "bonus": 1,
+            "damage": "1d8",
+            "damage_bonus": 1,
+            "critical": "19-20x2",
+            "range": 0,
+            "slashing": true,
+            "piercing": false,
+            "bludgeoning": false,
+            "notes": "",
+            "ammunition": 0,
+            "damage_attribute": "Str",
+            "attack_attribute": "Str",
+            "page": 124,
+            "weight": 5
+        },
+        {
+            "name": "Comp. Longbow",
+            "is_item": 1,
+            "bonus": 1,
+            "damage": "1d8",
+            "damage_bonus": 0,
+            "critical": "19-20x2",
+            "range": 30,
+            "slashing": false,
+            "piercing": true,
+            "bludgeoning": false,
+            "notes": "",
+            "ammunition": 30,
+            "damage_attribute": "Dex",
+            "attack_attribute": "Dex",
+            "page": 124,
+            "weight": 4
+        },
+        {
+            "name": "Longspear",
+            "is_item": 1,
+            "bonus": 1,
+            "damage": "1d8",
+            "damage_bonus": 0,
+            "critical": "20x3",
+            "range": 0,
+            "slashing": false,
+            "piercing": true,
+            "bludgeoning": false,
+            "notes": "",
+            "ammunition": 0,
+            "damage_attribute": "Str",
+            "attack_attribute": "Str",
+            "page": 124,
+            "weight": 9
+        }
+    ],
+    "items": [
+        {
+            "name": "Potions",
+            "page": 12,
+            "quantity": 5,
+            "weight": 0.5
+        }
+    ],
+    "skills": [
+        {
+            "name": "Appraise",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Autohypnosis",
+            "attribute": "Wis",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Balance",
+            "attribute": "Dex",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Bluff",
+            "attribute": "Cha",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Climb",
+            "attribute": "Str",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Concentration",
+            "attribute": "Con",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Control Shape",
+            "attribute": "Wis",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Craft",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Decipher Script",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Diplomacy",
+            "attribute": "Cha",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Disable Device",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Disguise",
+            "attribute": "Cha",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Escape Artist",
+            "attribute": "Dex",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Forgery",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Gather Information",
+            "attribute": "Cha",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Handle Animal",
+            "attribute": "Cha",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Heal",
+            "attribute": "Wis",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Hide",
+            "attribute": "Dex",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Intimidate",
+            "attribute": "Cha",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Jump",
+            "attribute": "Str",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Knowledge (Arcana)",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Knowledge (Architecture and engineering)",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Knowledge (Dungeoneering)",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Knowledge (Geography)",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Knowledge (History)",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Knowledge (Local)",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Knowledge (Nature)",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Knowledge (Nobility and Royalty)",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Knowledge (Psionics)",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Knowledge (Religion)",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Knowledge (The Planes)",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Listen",
+            "attribute": "Wis",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Move Silently",
+            "attribute": "Dex",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Open Lock",
+            "attribute": "Dex",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Perform",
+            "attribute": "Cha",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Psicraft",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Profession",
+            "attribute": "Wis",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Ride",
+            "attribute": "Dex",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Search",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Sense Motive",
+            "attribute": "Wis",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Sleight of Hand",
+            "attribute": "Dex",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Speak Language",
+            "attribute": "---",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Spellcraft",
+            "attribute": "Int",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Spot",
+            "attribute": "Wis",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Survival",
+            "attribute": "Wis",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Swim",
+            "attribute": "Str",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Tumble",
+            "attribute": "Dex",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Use Magic Device",
+            "attribute": "Cha",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Use Psionic Device",
+            "attribute": "Cha",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Use Rope",
+            "attribute": "Dex",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        },
+        {
+            "name": "Test Use Rope",
+            "attribute": "Dex",
+            "ranks": 0,
+            "misc": 0,
+            "cross_class": false
+        }
+    ],
+
+    "skill_synergy": [
+        {"from": "Bluff", "to": "Diplomacy"},
+        {"from": "Bluff", "to": "Disguise"},
+        {"from": "Bluff", "to": "Intimidate"},
+        {"from": "Craft", "to": "Appraise"},
+        {"from": "Handle Animal", "to": "Ride"},
+        {"from": "Jump", "to": "Tumble"},
+        {"from": "Knowledge (Arcana)", "to": "Spellcraft"},
+        {"from": "Knowledge (Local)", "to": "Gather Information"},
+        {"from": "Knowledge (Nobility and Royalty)", "to": "Diplomacy"},
+        {"from": "Sense Motive", "to": "Diplomacy"}, 
+        {"from": "Tumble", "to": "Balance"},
+        {"from": "Tumble", "to": "Jump"}
+    ]
+}

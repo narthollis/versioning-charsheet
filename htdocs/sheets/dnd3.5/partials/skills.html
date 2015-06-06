@@ -1,0 +1,67 @@
+<div>
+  <div class="form-group">
+    <input class="form-control" type="text" placeholder="Skill Filter" ng-model="filters.skills" />
+  </div>
+  <ul class="skilllist">
+    <li class="header">
+      <label class="cc">CC</label>
+      <span></span>
+      <label class="name">Name</label>
+      <span></span>
+      <label class="ability">Ability</label>
+      <span></span>
+      <label class="total">Total</label>
+      <span></span>
+      <label class="ability_mods">Ability Mod</label>
+      <span></span>
+      <label class="ranks">Ranks</label>
+      <span></span>
+      <label class="misc">Misc</label>
+      <span></span>
+      <label class="synergy">Synergy</label>
+      <span></span>
+      <label></label>
+    </li>
+
+    <li ng-repeat-start="skill in sheet.skills | orderBy:'name' | filter:filters.skills">
+      <span class="input-group-addon checkbox cc">
+        <input type="checkbox" ng-model="skill.cc" />
+      </span>
+      <span></span>
+      <input
+          type="text"
+          class="form-control name"
+          ng-model="skill.name"
+          ng-model-options="{ updateOn: 'blur' }"
+          ng-keyup="cancel($event)"
+        />
+      <span></span>
+      <select class="form-control ability" ng-model="skill.attribute">
+        <option value="Str">Str</option>
+        <option value="Dex">Dex</option>
+        <option value="Con">Con</option>
+        <option value="Int">Int</option>
+        <option value="Wis">Wis</option>
+        <option value="Cha">Cha</option>
+        <option value="---">---</option>
+      </select>
+      <span></span>
+      <output class="form-control total" ng-bind="(getAttributeBonus(skill.attribute) == '---' ? 0 : getAttributeBonus(skill.attribute)) + skill.ranks + skill.misc + getSynergy(skill.name)"></output>
+      <span>=</span>
+      <output class="form-control total" ng-bind="getAttributeBonus(skill.attribute)"></output>
+      <span>+</span>
+      <input type="number" class="form-control ranks" ng-model="skill.ranks" />
+      <span>+</span>
+      <input type="number" class="form-control ranks" ng-model="skill.misc" />
+      <span>+</span>
+      <output class="form-control synergy" ng-bind="getSynergy(skill.name)"></output>
+      <span></span>
+      <button class="form-control weight button" ng-click="removeSkill($index)">
+          <span class="glyphicon glyphicon-trash"></span>
+      </button>
+    </li>
+    <li class="spacer" ng-repeat-end></li>
+  </ul>
+
+  <button class="btn btn-default" ng-click="addSkill()">Add Skill</button>
+</div>

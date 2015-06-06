@@ -1,0 +1,199 @@
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 armorbuttons">
+  <div class="btn-group"><button class="btn btn-default" ng-click="addAttack()">Add Attack</button></div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 attacks" ng-repeat="item in sheet.attack">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <h4 class="charsheet-icon-sword" ng-if="item.is_item == 1 && item.range == 0"></h4>
+            <h4 class="charsheet-icon-bow" ng-if="item.is_item == 1 && item.range > 0"></h4>
+            <h4 class="charsheet-icon-claw" ng-if="item.is_item == 0"></h4>
+        </div> 
+        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">{{ item.name }}</div>
+        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 pull-right">
+          <div class="btn-group pull-right">
+            <button type="button" class="btn btn-default" ng-click="removeAttack($index)">
+              <span class="glyphicon glyphicon-trash"></span>
+            </button>
+
+            <button class="btn btn-default" ng-click="notCollapsed = !notCollapsed" ng-disabled="item.name == ''" ng-init="notCollapsed = (notCollapsed || item.name == '')">
+              <span class="glyphicon glyphicon-chevron-up" ng-if="notCollapsed"></span>
+              <span class="glyphicon glyphicon-chevron-down" ng-if="!notCollapsed"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-body row" collapse="!notCollapsed">
+      <div class="form-group col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <label for="attack_{{ $index }}_name">Name</label>
+        <input type="text" class="form-control" id="attack_{{ $index }}_name" ng-model="item.name" />
+      </div>
+      <div class="form-group col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <label>&nbsp;</label>
+        <select class="form-control" ng-model="item.is_item">
+            <option value="1">Item</option>
+            <option value="0">Natural</option>
+        </select>
+      </div>
+
+      <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 damagetype">
+        <div class="btn-group btn-group-justified">
+          <label
+                class="btn"
+                ng-model="item.slashing"
+                btn-checkbox
+                ng-class="{'btn-success': item.slashing, 'btn-default': !item.slashing}">
+            Slashing
+          </label>
+
+          <label
+                class="btn"
+                ng-model="item.piercing"
+                btn-checkbox
+                ng-class="{'btn-success': item.piercing, 'btn-default': !item.piercing}">
+            Piercing
+          </label>
+          <label
+                class="btn"
+                ng-model="item.bludgeoning"
+                btn-checkbox
+                ng-class="{'btn-success': item.bludgeoning, 'btn-default': !item.bludgeoning}">
+            Bludgeoning
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="attackdamage">
+          <div class="header">
+            <label for="attack_{{ $index }}_damage" class="total">Damage</label>
+            <span></span>
+            <label for="attack_{{ $index }}_bonus">Bonus</label>
+            <span></span>
+            <label>{{ item.damage_attribute }}</label>
+            <span></span>
+          </div>
+          <div class="spacer"></div>
+          <div>
+            <input type="text" class="form-control" id="attack_{{ $index }}_damage" ng-model="item.damage" />
+            <span class="input-group-addon">+</span>
+            <input type="number" class="form-control" id="attack_{{ $index }}_bonus" ng-model="item.damage_bonus" />
+            <span class="input-group-addon">+</span>
+            <output class="form-control" ng-bind="getAttributeBonus(item.damage_attribute)"></output>
+            <div class="input-group-btn" dropdown>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href ng-click="attackSetDamageAttribute($index, '---')">---</a></li>
+                <li><a href ng-click="attackSetDamageAttribute($index, 'Str')">Str</a></li>
+                <li><a href ng-click="attackSetDamageAttribute($index, 'Dex')">Dex</a></li>
+                <li><a href ng-click="attackSetDamageAttribute($index, 'Con')">Con</a></li>
+                <li><a href ng-click="attackSetDamageAttribute($index, 'Int')">Int</a></li>
+                <li><a href ng-click="attackSetDamageAttribute($index, 'Wis')">Wis</a></li>
+                <li><a href ng-click="attackSetDamageAttribute($index, 'Cha')">Cha</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <label>Attack Bonus</label>
+        <div class="attackbonus">
+          <div class="header">
+            <label class="total">Total</label>
+            <span></span>
+            <label>BAB</label>
+            <span></span>
+            <label for="attack_{{ $index }}_attackbonus">Bonus</label>
+            <span></span>
+            <label>{{ item.attack_attribute }}</label>
+            <span></span>
+          </div>
+          <div class="spacer"></div>
+          <div>
+            <output class="form-control total" ng-bind="sheet.base_attack_bonus + item.bonus"></output>
+            <span class="input-group-addon">=</span>
+            <output class="form-control" ng-bind="sheet.base_attack_bonus"></output>
+            <span class="input-group-addon">+</span>
+            <input type="number" class="form-control" id="attack_{{ $index }}_attackbonus" ng-model="item.bonus" />
+            <span class="input-group-addon">+</span>
+            <output class="form-control" ng-bind="getAttributeBonus(item.attack_attribute)"></output>
+            <div class="input-group-btn" dropdown>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href ng-click="attackSetAttackAttribute($index, '---')">---</a></li>
+                <li><a href ng-click="attackSetAttackAttribute($index, 'Str')">Str</a></li>
+                <li><a href ng-click="attackSetAttackAttribute($index, 'Dex')">Dex</a></li>
+                <li><a href ng-click="attackSetAttackAttribute($index, 'Con')">Con</a></li>
+                <li><a href ng-click="attackSetAttackAttribute($index, 'Int')">Int</a></li>
+                <li><a href ng-click="attackSetAttackAttribute($index, 'Wis')">Wis</a></li>
+                <li><a href ng-click="attackSetAttackAttribute($index, 'Cha')">Cha</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <label for="attack_{{ $index }}_critical">Critical</label>
+        <input type="text" class="form-control" id="attack_{{ $index }}_critical" ng-model="item.critical" />
+      </div>
+      <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <label for="damage">Ammunition</label>
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" ng-click="item.ammunition = item.ammunition + 1">
+              <span class="glyphicon glyphicon-plus"></span>
+            </button>
+          </span>
+          <input type="number" class="form-control" id="damage" ng-model="item.ammunition" />
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" ng-click="item.ammunition = item.ammunition - 1">
+              <span class="glyphicon glyphicon-minus"></span>
+            </button>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <label for="attack_{{ $index }}_range">Range</label>
+        <input type="text" class="form-control" id="attack_{{ $index }}_range" ng-model="item.range" />
+      </div>
+      <div class="form-group col-xs-5 col-sm-5 col-md-5 col-lg-5">
+        <label for="attack_{{ $index }}_weight">Weight</label>
+        <div class="input-group">
+          <input type="number" class="form-control" id="attack_{{ $index }}_weight" ng-model="item.weight" />
+          <span class="input-group-addon">lb.</span>
+        </div>
+      </div>
+      <div class="form-group col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <label for="attack_{{ $index }}_page">Page</label>
+        <input type="text" class="form-control" id="attack_{{ $index }}_page" ng-model="item.page" />
+      </div>
+
+      <div class="form-group col-xs-12 col-xm-12 col-md-12 col-lg-12">
+        <label for="attack_{{ $index }}_notes">Special Properties / Notes</label>
+        <textarea class="form-control" id="attack_{{ $index }}_notes" ng-model="item.notes">
+        </textarea>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="well">
+        <div class="from-group">
+            <label for="attack_notes">Additional Notes</label>
+            <textarea class="form-control" id="attack_notes" ng-model="sheet.attack_notes"></textarea>
+        </div>
+    </div>
+</div>

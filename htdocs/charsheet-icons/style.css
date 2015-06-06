@@ -1,0 +1,46 @@
+@font-face {
+	font-family: 'Char-Sheet-Icons';
+	src:url('fonts/Char-Sheet-Icons.eot?-fdk7qh');
+	src:url('fonts/Char-Sheet-Icons.eot?#iefix-fdk7qh') format('embedded-opentype'),
+		url('fonts/Char-Sheet-Icons.woff?-fdk7qh') format('woff'),
+		url('fonts/Char-Sheet-Icons.ttf?-fdk7qh') format('truetype'),
+		url('fonts/Char-Sheet-Icons.svg?-fdk7qh#Char-Sheet-Icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="charsheet-icon-"], [class*=" charsheet-icon-"] {
+	font-family: 'Char-Sheet-Icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.charsheet-icon-bow:before {
+	content: "\e606";
+}
+.charsheet-icon-claw:before {
+	content: "\e604";
+}
+.charsheet-icon-sword:before {
+	content: "\e605";
+}
+.charsheet-icon-natural:before {
+	content: "\e602";
+}
+.charsheet-icon-deflection:before {
+	content: "\e603";
+}
+.charsheet-icon-shield:before {
+	content: "\e600";
+}
+.charsheet-icon-armor:before {
+	content: "\e601";
+}

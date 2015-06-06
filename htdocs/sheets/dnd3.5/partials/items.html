@@ -1,0 +1,101 @@
+
+<div class="gearitems">
+  <ul>
+    <li class="header">
+      <label class="page">Pg.</label>
+      <span></span>
+      <label class="name">Item</label>
+      <span></span>
+      <label class="quantity">Qty.</label>
+      <span></span>
+      <label class="weight">Wt.</label>
+      <span></span>
+      <label class="button"></label>
+    </li>
+
+    <li ng-repeat-start="item in sheet.armor">
+        <output class="form-control page" ng-bind="item.page"></output>
+        <span></span>
+        <output class="form-control name" ng-bind="item.name"></output>
+        <span></span>
+        <output class="form-control quantity">1</output>
+        <span></span>
+        <output class="form-control weight" ng-bind="(item.equiped ? item.weight : 0)"></output>
+        <span></span>
+        <span></span>
+    </li>
+    <li class="spacer" ng-repeat-end></li>
+
+    <li ng-repeat-start="item in sheet.shield">
+        <output class="form-control page" ng-bind="item.page"></output>
+        <span></span>
+        <output class="form-control name" ng-bind="item.name"></output>
+        <span></span>
+        <output class="form-control quantity">1</output>
+        <span></span>
+        <output class="form-control weight" ng-bind="item.weight"></output>
+        <span></span>
+        <span></span>
+    </li>
+    <li class="spacer" ng-repeat-end></li>
+
+    <li ng-repeat-start="item in sheet.protective_item">
+        <output class="form-control page" ng-bind="item.page"></output>
+        <span></span>
+        <output class="form-control name" ng-bind="item.name"></output>
+        <span></span>
+        <output class="form-control quantity">1</output>
+        <span></span>
+        <output class="form-control weight" ng-bind="item.weight"></output>
+        <span></span>
+        <span></span>
+    </li>
+    <li class="spacer" ng-repeat-end></li>
+
+    <li ng-repeat-start="item in sheet.attack" ng-if="item.is_item">
+        <output class="form-control page" ng-bind="item.page"></output>
+        <span></span>
+        <output class="form-control name" ng-bind="item.name"></output>
+        <span></span>
+        <output class="form-control quantity">1</output>
+        <span></span>
+        <output class="form-control weight" ng-bind="item.weight"></output>
+        <span></span>
+        <span class="button"></span>
+    </li>
+    <li class="spacer" ng-repeat-end ng-if="item.is_item"></li>
+
+    <li ng-repeat-start="item in sheet.items">
+        <input class="form-control page" ng-model="item.page" />
+        <span></span>
+        <input class="form-control name" ng-model="item.name" />
+        <span></span>
+        <input class="form-control quantity" ng-model="item.quantity" />
+        <span></span>
+        <input class="form-control weight" ng-model="item.weight" />
+        <span></span>
+        <button class="form-control weight button" ng-click="removeItem($index)">
+            <span class="glyphicon glyphicon-trash"></span>
+        </button>
+    </li>
+    <li class="spacer" ng-repeat-end></li>
+
+    <li>
+        <span class="page"></span>
+        <span></span>
+        <div class="input-group-btn name">
+            <button class="btn btn-default" ng-click="addItem()">Add Item</button>
+        </div>
+        <span></span>
+        <span class="quantity"></span>
+        <span></span>
+        <output class="form-control weight" ng-bind="itemWeight + armorWeight + shieldWeight + protectiveItemWeight"></output>
+        <span>lb.</span>
+        <span></span>
+    </li>
+  </ul>
+</div>
+
+
+
+        

@@ -1,0 +1,201 @@
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-5">
+  <table class="table attributes">
+    <thead>
+      <tr>
+        <td>&nbsp;</td>
+        <td>Base</td>
+        <td>Mod</td>
+        <td>Ajd</td>
+        <td>Score</td>
+        <td>Mod</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>STR</th>
+        <td><input type="number" class="form-control" ng-model="sheet.str" /></td>
+        <td><output class="form-control" ng-bind="modifier(sheet.str)"></output></td>
+        <td><input type="number" class="form-control" ng-model="sheet.str_adj" /></td>
+        <td><output class="form-control" ng-bind="ability_totals.str"></output></td>
+        <td><output class="form-control" ng-bind="modifier(ability_totals.str)"></output></td>
+      </tr>
+      <tr>
+        <th>DEX</th>
+        <td><input type="number" class="form-control" ng-model="sheet.dex" /></td>
+        <td><output class="form-control" ng-bind="modifier(sheet.dex)"></output></td>
+        <td><input type="number" class="form-control" ng-model="sheet.dex_adj" /></td>
+        <td><output class="form-control" ng-bind="ability_totals.dex"></output></td>
+        <td><output class="form-control" ng-bind="modifier(ability_totals.dex)"></output></td>
+      </tr>
+      <tr>
+        <th>CON</th>
+        <td><input type="number" class="form-control" ng-model="sheet.con" /></td>
+        <td><output class="form-control" ng-bind="modifier(sheet.con)"></output></td>
+        <td><input type="number" class="form-control" ng-model="sheet.con_adj" /></td>
+        <td><output class="form-control" ng-bind="ability_totals.con"></output></td>
+        <td><output class="form-control" ng-bind="modifier(ability_totals.con)"></output></td>
+      </tr>
+      <tr>
+        <th>INT</th>
+        <td><input type="number" class="form-control" ng-model="sheet.int" /></td>
+        <td><output class="form-control" ng-bind="modifier(sheet.int)"></output></td>
+        <td><input type="number" class="form-control" ng-model="sheet.int_adj" /></td>
+        <td><output class="form-control" ng-bind="ability_totals.int"></output></td>
+        <td><output class="form-control" ng-bind="modifier(ability_totals.int)"></output></td>
+      </tr>
+      <tr>
+        <th>WIS</th>
+        <td><input type="number" class="form-control" ng-model="sheet.wis" /></td>
+        <td><output class="form-control" ng-bind="modifier(sheet.wis)"></output></td>
+        <td><input type="number" class="form-control" ng-model="sheet.wis_adj" /></td>
+        <td><output class="form-control" ng-bind="ability_totals.wis"></output></td>
+        <td><output class="form-control" ng-bind="modifier(ability_totals.wis)"></output></td>
+      </tr>
+      <tr>
+        <th>CHA</th>
+        <td><input type="number" class="form-control" ng-model="sheet.cha" /></td>
+        <td><output class="form-control" ng-bind="modifier(sheet.cha)"></output></td>
+        <td><input type="number" class="form-control" ng-model="sheet.cha_adj" /></td>
+        <td><output class="form-control" ng-bind="ability_totals.cha"></output></td>
+        <td><output class="form-control" ng-bind="modifier(ability_totals.cha)"></output></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-7">
+  <div class="row">
+    <div class="form-group col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <label for="speed">Speed</label>
+      <input type="number" class="form-control" id="speed" ng-model="sheet.speed" />
+    </div>
+    <div class="form-group col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <label for="damage_rediction">Damage Reduction</label>
+      <input type="number" class="form-control" ng-model="sheet.damage_reduction" />
+    </div>
+    <div class="form-group col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <label for="spell_resistance">Spell Resistance</label>
+      <input type="number" class="form-control" ng-model="sheet.spell_resistance" />
+    </div>
+  </div>
+  <div class="initative">
+    <div class="header">
+      <label for="initative_total">Initative</label>
+      <span></span>
+      <label for="initative_dexmod">Dex Mod</label>
+      <span></span>
+      <label for="initative_misc_mod">Misc Mod</label>
+    </div>
+    <div>
+      <output class="form-control" id="initative_total" ng-bind="modifier(ability_totals.dex) + sheet.initiative_mod"></output>
+      <span class="input-group-addon">=</span>
+      <output class="form-control" id="initative_dexmod" ng-bind="modifier(ability_totals.dex)"></output>
+      <span class="input-group-addon">+</span>
+      <input type="number" class="form-control" id="init_misc_mod" ng-model="sheet.initiative_mod" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="base_attack_bonus">Base Attack Bonus</label>
+    <div class="baseattackbonus">
+      <div>
+        <input type="number" class="form-control" id="speed" ng-model="sheet.base_attack_bonus" />
+        <span>/</span>
+        <output class="form-control" id="speed" ng-bind="(sheet.base_attack_bonus > 5 ? sheet.base_attack_bonus-5 : '--')"></output>
+        <span>/</span>
+        <output class="form-control" id="speed" ng-bind="(sheet.base_attack_bonus > 10 ? sheet.base_attack_bonus-10 : '--')"></output>
+        <span>/</span>
+        <output class="form-control" id="speed" ng-bind="(sheet.base_attack_bonus > 15 ? sheet.base_attack_bonus-15 : '--')"></output>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-7 table-responsive">
+  <div class="grapple">
+    <div class="header">
+      <label for="grapple_total">Grapple</label>
+      <span></span>
+      <label for="grapple_bab">BAB</label>
+      <span></span>
+      <label for="grappel_strength_mod">Str Mod</label>
+      <span></span>
+      <label for="grapple_size_mod">Size Mod</label>
+      <span></span>
+      <label for="grapple_misc_mod">Misc Mod</label>
+    </div>
+    <div>
+      <output class="form-control" id="grapple_total" ng-bind="grappleTotal" />
+      <span>=</span>
+      <output class="form-control" id="grapple_bab" ng-bind="sheet.base_attack_bonus"></output>
+      <span>+</span>
+      <output class="form-control" id="grapple_str_mod" ng-bind="modifier(ability_totals.str)"></output>
+      <span>+</span>
+      <output class="form-control" id="grapple_size_mod" ng-bind="sizeGrappleMod"></output>
+      <span>+</span>
+      <input type="number" class="form-control" id="grapple_misc_mod" ng-model="sheet.grapple_misc" />
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 table-responsive">
+  <div class="saves">
+    <div class="header">
+      <span></span>
+      <strong>Total</strong>
+      <span></span>
+      <span>Base</span>
+      <span></span>
+      <span>Ability</span>
+      <span></span>
+      <span>Magic</span>
+      <span></span>
+      <span>Misc</span>
+      <span></span>
+      <span>Temp</span>
+    </div>
+    <div>
+      <strong>Fortitude</strong>
+      <output class="form-control" ng-bind="save_fortitude_total"></output>
+      <span class="input-group-addon">=</span>
+      <input type="number" class="form-control" ng-model="sheet.save_fortitude_base" />
+      <span class="input-group-addon">+</span>
+      <output class="form-control" ng-bind="modifier(ability_totals.con)"></output>
+      <span class="input-group-addon">+</span>
+      <input type="number" class="form-control" ng-model="sheet.save_fortitude_magic" />
+      <span class="input-group-addon">+</span>
+      <input type="number" class="form-control" ng-model="sheet.save_fortitude_misc" />
+      <span class="input-group-addon">+</span>
+      <input type="number" class="form-control" ng-model="sheet.save_fortitude_temp" />
+    </div>
+    <div class="spacer"><span></span></div>
+    <div>
+      <strong>Reflex</strong>
+      <output class="form-control" ng-bind="save_reflex_total"></output>
+      <span class="input-group-addon">=</span>
+      <input type="number" class="form-control" ng-model="sheet.save_reflex_base" />
+      <span class="input-group-addon">+</span>
+      <output class="form-control" ng-bind="modifier(ability_totals.dex)"></output>
+      <span class="input-group-addon">+</span>
+      <input type="number" class="form-control" ng-model="sheet.save_reflex_magic" />
+      <span class="input-group-addon">+</span>
+      <input type="number" class="form-control" ng-model="sheet.save_reflex_misc" />
+      <span class="input-group-addon">+</span>
+      <input type="number" class="form-control" ng-model="sheet.save_reflex_temp" />
+    </div>
+    <div class="spacer"><span></span></div>
+    <div>
+      <strong>Will</strong>
+      <output class="form-control" ng-bind="save_will_total"></output></td>
+      <span class="input-group-addon">=</span>
+      <input type="number" class="form-control" ng-model="sheet.save_will_base" />
+      <span class="input-group-addon">+</span>
+      <output class="form-control" ng-bind="modifier(ability_totals.wis)"></output>
+      <span class="input-group-addon">+</span>
+      <input type="number" class="form-control" ng-model="sheet.save_will_magic" />
+      <span class="input-group-addon">+</span>
+      <input type="number" class="form-control" ng-model="sheet.save_will_misc" />
+      <span class="input-group-addon">+</span>
+      <input type="number" class="form-control" ng-model="sheet.save_will_temp" />
+    </div>
+  </div>
+</div>
+
